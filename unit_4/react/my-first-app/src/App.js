@@ -8,13 +8,14 @@ import Home from './Components/React_menu/Home';
 import JoinUS from './Components/React_menu/JoinUs';
 import Search from './Components/React_menu/Search';
 import Login from './Components/React_menu/Login';
+import ButtonList from './Components/React_Menu_II/List';
 
 
 function App() {
   return (
     <div className="App App-header">
       {/* <List/> */}
-      <div className="Button-List">
+      {/* <div className="Button-List">
       <JoinUS/>
       <Settings/>
       <Login/>
@@ -23,7 +24,8 @@ function App() {
       <Help/>
       <Home/>
       <Download/>
-      </div>
+      </div> */}
+      <ButtonList/>
     </div>
   );
 }
