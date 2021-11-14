@@ -1,0 +1,30 @@
+.button{
+    border-radius: 100px;
+    padding: 0.3rem 0.5rem;
+    margin:0.3rem;
+    width: 100px;
+}
+.red{
+    background: rgb(175,42,50);
+}
+.brown{
+    background: rgb(146,107,47);
+}
+.purple{
+    background: purple;
+}
+.dblue{
+    background: rgb(122,177,190);
+}
+.pink{
+    background: #d7427e;
+}
+.blue{
+    background: rgb(35,160,217);
+}
+.green{
+    background: rgb(143,190,66);
+}
+.orange{
+    background: orange;
+}
