@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@200;300&display=swap");
+.App {
+  font-family: "Montagu Slab", serif;
+  /* text-align: center; */
+}
+.cards {
+  /* border: 1px solids red; */
+  padding: 1rem;
+  gap: 1rem;
+  display: flex;
+}
+.cardItems {
+  max-width: 350px;
+  height: 500px;
+  border-radius: 20px;
+  /* border: 1px solid black; */
+}
+img {
+  border-radius: 20px 20px 0px 0px;
+}
