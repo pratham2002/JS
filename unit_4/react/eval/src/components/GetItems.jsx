@@ -1,42 +1,36 @@
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 function GetItems(){
-    // const axios = require('axios');
-    var results = axiosTest();
-    // console.log(results);
-    
-return(
-
-
-    <>
-    <div>{results}</div>
-    </>
-)
-}
-function createCard(list){
-    
-    for(var data of list){
-        // console.log(data);
-        return(
-            <div className="app">
+    const [data,setData] = useState([])
+    console.log(data,"result");
+    function ListCard({name,id,model}){
+        return(<div className="app">
             <h2>
-            Name={data.Make_Name},ID={data.Model_ID},Model={data.Model_Name}
+            Name={name},ID={id},Model={model}
             </h2>
-            </div>
-        )
+            </div>)
     }
-}
-function axiosTest() {
+
+useEffect(()=>(
     axios.get("http://localhost:3001/cars")
-        .then(function (response) {
-            // console.log(response.data);
-            // I need this data here ^^
-            var result = createCard(response.data);
-            console.log(result);
-            return result;
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+    .then(function (response) {
+        setData(response.data)
+        // return result;
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+    )
+    ,[])
+    
+    
+    return(<>
+    <h1>Hello</h1>
+        {data.map((user)=>(
+            <ListCard name={user.Make_Name} id={user.Model_ID} model={user.Model_Name}/>
+        ))}
+    </>
+    )
 }
 export {GetItems}
