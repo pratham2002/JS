@@ -1,0 +1,12 @@
+.search{
+    padding: 25px;
+    width: 30%;
+    margin: auto;
+}
+.results >div{
+    gap: 2rem;
+    padding: 0.5rem;    
+    /* background-color: aqua; */
+    border: 1px solid black;
+    
+}
