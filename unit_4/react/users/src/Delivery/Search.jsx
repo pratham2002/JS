@@ -17,9 +17,16 @@ function Search(){
     const [isLoading,setLoading] = useState(false)
     // console.log(state);
     const handleSubmit= (e)=>{
+        
+        if(!state){
+            window.alert("Enter Something!")
+            location.reload()
+            return
+        }
         axios.get(baseUrl+state)
         .then((res)=>{
             console.log(res.data.meals);
+            setState("")
             setData(res.data.meals)
             setLoading(false);
         })
@@ -30,12 +37,12 @@ function Search(){
         <>
     <Box className={styles.search} style={{display:"flex",gap:"1rem"}}>
         <Avatar src={logo} sx={{height:56,width:56}} alt="Zomato Logo"/>
-        <TextField autoFocus onChange={(e)=>setState(e.target.value)} name="query" label="Search For Restaurant " variant="standard"/>
+        <TextField autoFocus onChange={(e)=>{setState(e.target.value)}} value={state} name="query" label="Search For Restaurant " variant="standard"/>
         <Button onClick={handleSubmit} variant="outlined" endIcon={<SearchIcon/>}>Submit</Button>
     </Box>
     <div className={styles.results}>
             {isLoading && <h2>Retreving...</h2>}  
-            {data.map((e)=>(
+            {data?.filter(e=>e.strSource).map((e)=>(
                 <ListCard key={e.idMeal} cate={e.strCategory} name={e.strMeal} img={e.strMealThumb} receipe={e.strSource}/>
             ))}
         </div>
