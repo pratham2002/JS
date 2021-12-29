@@ -1,3 +1,5 @@
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 function ListItem({name,img,price,desc}){
     return(
         <div style={{display:"flex",border:"1px solid black",padding:15,minWidth:"500px",gap:15,margin:"auto",width:"50%",marginBottom:15}}>
@@ -5,6 +7,7 @@ function ListItem({name,img,price,desc}){
             <div style={{display:"flex",paddingLeft:5,flexDirection:"column"}}>
                 <h3>{name}</h3>
                 <h4>Price:{price}</h4>
+                <RemoveIcon/><AddIcon/>
                 <a>{desc}</a>
             </div>
 
